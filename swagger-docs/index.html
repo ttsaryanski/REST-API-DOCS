@@ -3,6 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/png" href="book.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#2196f3" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>API Docs</title>
         <link
             rel="stylesheet"
@@ -52,6 +55,10 @@
                     layout: "StandaloneLayout",
                 });
             };
+
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("/sw.js");
+            }
         </script>
     </body>
 </html>
